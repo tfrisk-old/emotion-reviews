@@ -1,13 +1,17 @@
 class ProductsController < ApplicationController
 
   def new
+    @product = Product.new
   end
 
   def create
     @product = Product.new(product_params)
 
-    @product.save
-    redirect_to @product
+    if @product.save
+      redirect_to @product
+    else
+      render 'new'
+    end
   end
 
   def show
