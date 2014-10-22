@@ -9,6 +9,11 @@
 </p>
 
 <p>
+  <strong>Tags:</strong>
+  <%= review.tag_list %>
+</p>
+
+<p>
   <%= link_to 'Destroy Review', [review.product, review],
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
