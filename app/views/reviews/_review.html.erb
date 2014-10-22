@@ -1,0 +1,15 @@
+<p>
+  <strong>Reviewer:</strong>
+  <%= review.reviewer %>
+</p>
+
+<p>
+  <strong>Text:</strong>
+  <%= review.text %>
+</p>
+
+<p>
+  <%= link_to 'Destroy Review', [review.product, review],
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+</p>
