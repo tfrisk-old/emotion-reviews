@@ -8,8 +8,10 @@
   <%= review.text %>
 </p>
 
+<% if can? :destroy, review %>
 <p>
   <%= link_to 'Destroy Review', [review.product, review],
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
+<% end %>
