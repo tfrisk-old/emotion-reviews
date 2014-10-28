@@ -1,7 +1,7 @@
 <%= form_for([@product, @product.reviews.build]) do |f| %>
   <p>
     <%= f.label :reviewer %><br>
-    <%= f.text_field :reviewer %>
+    <%= f.text_field :reviewer, :value => 'Name' %>
   </p>
   <p>
     <%= f.label :text %><br>
