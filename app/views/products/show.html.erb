@@ -8,6 +8,11 @@
   <%= @product.description %>
 </p>
 
+<p>
+  <strong>Tags:</strong>
+  <%= render @tag_counts %>
+</p>
+
 <h2>Reviews</h2>
 <%= render @product.reviews %>
 

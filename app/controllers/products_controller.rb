@@ -17,6 +17,7 @@ class ProductsController < ApplicationController
 
   def show
     @product = Product.find(params[:id])
+    @tag_counts = @product.reviews.tag_counts
   end
 
   def index
