@@ -22,6 +22,7 @@ class ProductsController < ApplicationController
 
   def index
     @products = Product.all
+    @tag_counts = Review.tag_counts
   end
 
   def edit
