@@ -8,6 +8,7 @@
   <%= review.text %>
 </p>
 
+<% if can? :destroy, review %>
 <p>
   <strong>Tags:</strong>
   <%= review.tag_list %>
@@ -18,3 +19,4 @@
               method: :delete,
               data: { confirm: 'Are you sure?' } %>
 </p>
+<% end %>

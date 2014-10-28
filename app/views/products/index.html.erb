@@ -1,6 +1,8 @@
 <h1>Listing products</h1>
 
-<%= link_to 'New product', new_product_path %>
+<% if can? :create, Product %>
+  <%= link_to 'New product', new_product_path %>
+<% end %>
 
 <table>
   <tr>
@@ -13,10 +15,14 @@
       <td><%= p.name %></td>
       <td><%= p.description %></td>
       <td><%= link_to 'Show', product_path(p) %></td>
-      <td><%= link_to 'Edit', edit_product_path(p) %></td>
-      <td><%= link_to 'Destroy', product_path(p),
+      <% if can? :update, p %>
+        <td><%= link_to 'Edit', edit_product_path(p) %></td>
+      <% end %>
+      <% if can? :destroy, p %>
+        <td><%= link_to 'Destroy', product_path(p),
                       method: :delete,
                       data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
   <% end %>
 </table>
