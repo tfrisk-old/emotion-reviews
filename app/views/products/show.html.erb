@@ -11,7 +11,7 @@
 <p>
   <strong>Tags:</strong>
 <ul>
-  <%= render @tag_counts %>
+  <%= render @tag_counts.sort_by { |t| [-t.count, t.name] } %>
 </ul>
 </p>
 
