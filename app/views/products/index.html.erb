@@ -1,34 +1,32 @@
-<h1>Listing products</h1>
+<div class="row">
+  <h2>Product listing
+    <% if can? :create, Product %>
+     <%= link_to 'Add new product', new_product_path, class: 'btn btn-success' %>
+    <% end %>
+  </h2>
+</div>
 
-<% if can? :create, Product %>
-  <%= link_to 'New product', new_product_path %>
-<% end %>
-
-<table>
-  <tr>
-    <th>Name</th>
-    <th>Description</th>
-  </tr>
-
+<div class="product-listing">
   <% @products.each do |p| %>
-    <tr>
-      <td><%= p.name %></td>
-      <td><%= p.description %></td>
-      <td><%= link_to 'Show', product_path(p) %></td>
-      <% if can? :update, p %>
-        <td><%= link_to 'Edit', edit_product_path(p) %></td>
-      <% end %>
-      <% if can? :destroy, p %>
-        <td><%= link_to 'Destroy', product_path(p),
-                      method: :delete,
-                      data: { confirm: 'Are you sure?' } %></td>
-      <% end %>
-    </tr>
+    <div class="row">
+      <div class="row">
+        <h3><%= link_to p.name, product_path(p) %>
+        <% if can? :update, p %>
+        <%= link_to 'Edit', edit_product_path(p), class: 'btn btn-sm btn-warning' %>
+        <% end %>
+        <% if can? :destroy, p %>
+        <%= link_to 'Delete', product_path(p), class: 'btn btn-sm btn-danger',
+            method: :delete, data: { confirm: 'Are you sure?' } %>
+        <% end %>
+        </h3>
+      </div>
+      <p><%= p.description %></p>
+    </div>
   <% end %>
-</table>
+</div>
 
-<p><strong>Tags:</strong>
-  <ul>
+<p><strong>Emotions:</strong>
+  <ul class="nav nav-pills">
     <%= render @tag_counts.sort_by { |t| [-t.count, t.name] } %>
   </ul>
 </p>

@@ -1,19 +1,26 @@
-<p>
-  <strong>Name:</strong>
-  <%= @product.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @product.description %>
-</p>
+<div class="product-listing">
+  <div class="row">
+    <h3>
+      <%= @product.name %>
+      <% if can? :update, @product %>
+        <%= link_to 'Edit', edit_product_path(@product), class: "btn btn-sm btn-warning" %>
+      <% end %>
+      <% if can? :destroy, @product %>
+      <%= link_to 'Delete', @product , class: 'btn btn-sm btn-danger',
+          method: :delete, data: { confirm:  'Are you sure?' } %>
+      <% end %>
+    </h3>
+    <p><%= @product.description %></p>
+  </div>
 
 <p>
   <strong>Emotions:</strong>
-<ul>
-  <%= render @tag_counts.sort_by { |t| [-t.count, t.name] } %>
-</ul>
+  <ul class="nav nav-pills">
+    <%= render @tag_counts.sort_by { |t| [-t.count, t.name] } %>
+  </ul>
 </p>
+
+</div>
 
 <h2>Reviews</h2>
 <%= render @product.reviews %>
@@ -29,3 +36,5 @@
 <% if can? :update, @product %>
 | <%= link_to 'Edit', edit_product_path(@product) %>
 <% end %>
+
+
