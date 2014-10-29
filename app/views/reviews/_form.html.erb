@@ -1,21 +1,21 @@
 <%= form_for([@product, @product.reviews.build]) do |f| %>
-  <p>
+  <div class="form-group">
     <%= f.label :reviewer %><br>
     <%= f.text_field :reviewer, :value => 'Name' %>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <%= f.label :text %><br>
     <%= f.text_area :text %>
-  </p>
-  <p>
+  </div>
+  <div class="form-group">
     <%= f.label :tag_list, "Emotions" %><br>
     <%= f.select :tag_list,
         # Plutchik's wheel of emotions
         options_for_select(["joy", "trust", "fear", "surprise", "sadness", "disgust", "anger", "anticipation"]),
         {}, {:multiple => true, :class => "tag-select"} %>
-  </p>
+  </div>
 
-  <p>
-    <%= f.submit %>
-  </p>
+  <input type="submit" value="Submit" class="btn btn-success" />
+  <%= link_to 'Back', products_path, class: 'btn btn' %>
+
 <% end %>

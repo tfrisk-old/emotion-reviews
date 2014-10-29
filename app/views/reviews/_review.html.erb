@@ -1,22 +1,26 @@
-<p>
-  <strong>Reviewer:</strong>
+<div class="row">
+
+<h4>
   <%= review.reviewer %>
-</p>
+  <% if can? :destroy, review %>
+    <%= link_to 'Delete',
+      [review.product, review],
+        class: "btn btn-xs btn-danger",
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+  <% end %>
+</h4>
 
 <p>
-  <strong>Text:</strong>
   <%= review.text %>
 </p>
 
 <p>
-  <strong>Emotions:</strong>
-  <%= review.tag_list %>
+  <ul class="nav nav-pills">
+    <% review.tag_list.each do |t| %>
+      <li> <%= t %> </li>
+    <% end %>
+  </ul>
 </p>
 
-<% if can? :destroy, review %>
-<p>
-  <%= link_to 'Destroy Review', [review.product, review],
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %>
-</p>
-<% end %>
+</div>
