@@ -8,8 +8,11 @@
     <%= f.text_area :text %>
   </p>
   <p>
-    <%= f.label :tag_list, "Tags (separated by comma)" %><br>
-    <%= f.text_field :tag_list %>
+    <%= f.label :tag_list, "Emotions" %><br>
+    <%= f.select :tag_list,
+        # Plutchik's wheel of emotions
+        options_for_select(["joy", "trust", "fear", "surprise", "sadness", "disgust", "anger", "anticipation"]),
+        {}, {:multiple => true, :class => "tag-select"} %>
   </p>
 
   <p>

@@ -21,7 +21,7 @@ class ProductsController < ApplicationController
   end
 
   def index
-    @products = Product.all
+    @products = Product.all.sort_by { |p| [p.name] }
     @tag_counts = Review.tag_counts
   end
 

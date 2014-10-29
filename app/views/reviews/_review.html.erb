@@ -8,12 +8,12 @@
   <%= review.text %>
 </p>
 
-<% if can? :destroy, review %>
 <p>
-  <strong>Tags:</strong>
+  <strong>Emotions:</strong>
   <%= review.tag_list %>
 </p>
 
+<% if can? :destroy, review %>
 <p>
   <%= link_to 'Destroy Review', [review.product, review],
               method: :delete,
