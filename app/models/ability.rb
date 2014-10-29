@@ -11,6 +11,7 @@ class Ability
          can :read, :all
          can [:update, :destroy], Review, :user_id => user.id
          can :create, Review
+         can [:create, :update], Product
        end
     #
     # The first argument to `can` is the action you are giving the user
