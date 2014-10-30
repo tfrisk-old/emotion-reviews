@@ -6,6 +6,12 @@
   </h2>
 </div>
 
+<p><strong>Emotions:</strong>
+  <ul class="nav nav-pills">
+    <%= render @tag_counts.sort_by { |t| [-t.count, t.name] } %>
+  </ul>
+</p>
+
 <div class="product-listing">
   <% @products.each do |p| %>
     <div class="row">
@@ -24,10 +30,3 @@
     </div>
   <% end %>
 </div>
-
-<p><strong>Emotions:</strong>
-  <ul class="nav nav-pills">
-    <%= render @tag_counts.sort_by { |t| [-t.count, t.name] } %>
-  </ul>
-</p>
-
