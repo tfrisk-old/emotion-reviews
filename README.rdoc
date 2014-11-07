@@ -1,4 +1,4 @@
-== emotion reviews
+= emotion reviews
 
 Product review application that uses human emotions instead of arbitrary ratings.
 
@@ -27,17 +27,17 @@ If you would like to help with the UI, you're very welcome.
 
 == Usage and Technologies Used
 
-Project uses Ruby `2.1.4` and Rails `4.1.6`.
+Project uses Ruby +2.1.4+ and Rails +4.1.6+.
 
-Additional Ruby gems used are XXX
+Additional Ruby gems used are +devise+ for authentication , +cancancan+ for authorization and +acts-as-taggable-on+ for labeling the emotions.
 
 Default database is PostgreSQL (for Heroku deployment).
 
 First make sure your PostgreSQL database is up and configured properly. Then create the application database with `rake db:setup`.
 
-To start the web server use `rails server`.
+To start the web server use +rails server+.
 
-At the moment all the users are regular users by default. To promote the user to an admin role use `rails console` and update the users admin parameter from `false`to `true`.
+At the moment all the users are regular users by default. To promote the user to an admin role use +rails console+ and update the users +admin+ parameter to +true+.
 
 Heroku deployment can be done with Heroku standard process documented at https://devcenter.heroku.com/articles/getting-started-with-rails4
 
