@@ -33,11 +33,11 @@ Additional Ruby gems used are +devise+ for authentication , +cancancan+ for auth
 
 Default database is PostgreSQL (for Heroku deployment).
 
-First make sure your PostgreSQL database is up and configured properly. Then create the application database with `rake db:setup`.
+First make sure your PostgreSQL database is up and configured properly. Then create the application database with <tt>rake db:setup</tt>.
 
-To start the web server use +rails server+.
+To start the web server use <tt>rails server</tt>.
 
-At the moment all the users are regular users by default. To promote the user to an admin role use +rails console+ and update the users +admin+ parameter to +true+.
+At the moment all the users are regular users by default. To promote the user to an admin role use <tt>rails console</tt> and update the users +admin+ parameter to +true+.
 
 Heroku deployment can be done with Heroku standard process documented at https://devcenter.heroku.com/articles/getting-started-with-rails4
 
