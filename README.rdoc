@@ -1,28 +1,49 @@
-== README
+== emotion reviews
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Product review application that uses human emotions instead of arbitrary ratings.
 
-Things you may want to cover:
+This is a proof-of-concept application which currently runs at https://emotion-reviews.herokuapp.com/
 
-* Ruby version
+== Contributing
 
-* System dependencies
+If you like the idea and would like to add features, please contact me or just send pull reuests.
 
-* Configuration
+If you would like to help with the UI, you're very welcome.
 
-* Database creation
+== Features
 
-* Database initialization
+* Basic CRUD operations for products
+* Ability to add and delete reviews
+* Authentication and authorization (admin and regular users)
 
-* How to run the test suite
+== Todo list
 
-* Services (job queues, cache servers, search engines, etc.)
+* UI work
+* Some basic user right management (currently on rails console)
+* Ability to change and configure emotion scales
+* Ability to search products based on text and emotions
+* Company model to have many products
+* Views for showing users stats and reviews
 
-* Deployment instructions
+== Usage and Technologies Used
 
-* ...
+Project uses Ruby `2.1.4` and Rails `4.1.6`.
 
+Additional Ruby gems used are XXX
 
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+Default database is PostgreSQL (for Heroku deployment).
+
+First make sure your PostgreSQL database is up and configured properly. Then create the application database with `rake db:setup`.
+
+To start the web server use `rails server`.
+
+At the moment all the users are regular users by default. To promote the user to an admin role use `rails console` and update the users admin parameter from `false`to `true`.
+
+Heroku deployment can be done with Heroku standard process documented at https://devcenter.heroku.com/articles/getting-started-with-rails4
+
+Unit tests are missing because this is a quick hack.
+
+== License
+
+Copyright (C) 2014 Teemu Frisk, distributed under the MIT license.
+
