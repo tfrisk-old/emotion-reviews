@@ -1,0 +1,8 @@
+<h2>Editing company</h2>
+
+<% if can? :destroy, @company %>
+  <%= link_to 'Delete', @company , class: 'btn btn-sm btn-danger',
+      method: :delete, data: { confirm:  'Are you sure?' } %>
+<% end %>
+
+<%= render 'form'  %>

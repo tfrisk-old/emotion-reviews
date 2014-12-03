@@ -12,6 +12,7 @@ class Ability
          can [:update, :destroy], Review, :user_id => user.id
          can :create, Review
          can [:create, :update], Product
+         can [:create, :update], Company
        else
          can :read, :all
        end

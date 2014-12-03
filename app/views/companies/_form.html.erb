@@ -1,0 +1,27 @@
+<%= form_for @company do |c| %>
+  <% if @company.errors.any? %>
+  <div class="alert alert-info">
+    <strong><%= pluralize(@company.errors.count, "error") %>:</strong>
+    <ul>
+    <% @company.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= c.label :name %><br>
+    <%= c.text_field :name %>
+  </div>
+  
+  <div class="form-group">
+    <%= c.label :description %><br>
+    <%= c.text_area :description %>
+  </div>
+
+  <input type="submit" value="Submit" class="btn btn-success" />
+  <%= link_to 'Back', companies_path, class: 'btn btn' %>
+
+<% end %>
+

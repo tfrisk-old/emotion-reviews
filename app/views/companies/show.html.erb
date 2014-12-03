@@ -1,0 +1,15 @@
+<%= link_to 'Back to company listing', companies_path %>
+
+<div class="company-listing">
+  <div class="row">
+    <h3>
+      <%= @company.name %>
+      <% if can? :update, @company %>
+        <%= link_to 'Edit', edit_company_path(@company), class: "btn btn-sm btn-warning" %>
+      <% end %>
+      
+    </h3>
+    <p><%= @company.description %></p>
+  </div>
+
+</div>

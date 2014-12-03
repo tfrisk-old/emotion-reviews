@@ -4,6 +4,7 @@ Rails.application.routes.draw do
     resources :reviews
   end
 
+  resources :companies
   root 'products#index'
 
 end
