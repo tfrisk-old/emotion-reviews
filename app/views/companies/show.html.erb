@@ -12,4 +12,11 @@
     <p><%= @company.description %></p>
   </div>
 
+  <h4>Products</h4>
+  <ul>
+    <% @company.products.each do |product| %>
+      <li> <%= link_to product.name, product_path(product) %> </li>
+    <% end %>
+  </ul>
+
 </div>
