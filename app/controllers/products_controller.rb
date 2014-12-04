@@ -27,6 +27,7 @@ class ProductsController < ApplicationController
 
   def edit
     @product = Product.find(params[:id])
+    @companies = Company.all
   end
 
   def update
@@ -48,6 +49,6 @@ class ProductsController < ApplicationController
 
   private
     def product_params
-      params.require(:product).permit(:name, :description)
+      params.require(:product).permit(:name, :description, :company_id)
     end
 end

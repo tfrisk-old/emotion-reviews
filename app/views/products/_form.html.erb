@@ -16,6 +16,13 @@
   </div>
   
   <div class="form-group">
+    <%= f.label :company %><br>
+
+    <%= f.select :company_id, options_for_select(@companies.collect { |company|
+    [company.name.titleize, company.id] }, 1), {}, { id: 'companies_select' } %>
+  </div>
+  
+  <div class="form-group">
     <%= f.label :description %><br>
     <%= f.text_area :description %>
   </div>

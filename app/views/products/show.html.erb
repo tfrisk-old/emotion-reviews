@@ -9,6 +9,9 @@
       <% end %>
       
     </h3>
+    <% if @product.company %>
+      <p><%= @product.company.name %></p>
+    <% end %>
     <p><%= @product.description %></p>
   </div>
 
