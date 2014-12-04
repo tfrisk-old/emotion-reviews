@@ -15,6 +15,7 @@ If you would like to help with the UI, you're very welcome.
 * Basic CRUD operations for products
 * Ability to add and delete reviews
 * Authentication and authorization (admin and regular users)
+* Companies can have many products
 
 == Todo list
 
@@ -22,12 +23,11 @@ If you would like to help with the UI, you're very welcome.
 * Some basic user right management (currently on rails console)
 * Ability to change and configure emotion scales
 * Ability to search products based on text and emotions
-* Company model to have many products
 * Views for showing users stats and reviews
 
 == Usage and Technologies Used
 
-Project uses Ruby +2.1.4+ and Rails +4.1.6+.
+Project uses Ruby +2.1.5+ and Rails +4.1.8+.
 
 Additional Ruby gems used are +devise+ for authentication , +cancancan+ for authorization and +acts-as-taggable-on+ for labeling the emotions.
 
