@@ -18,9 +18,9 @@
   <div class="form-group">
     <%= f.label :company %><br>
 
-    <% if @companies %>
+    <% if !@companies.nil? %>
       <%= f.select :company_id, options_for_select(@companies.collect { |company|
-      [company.name.titleize, company.id] }, 1), {}, { id: 'companies_select' } %>
+      [company.name.titleize, company.id] }, @product.company_id), {}, { id: 'companies_select' } %>
     <% else %>
       No companies defined. Please create companies first before assigning them to products.
     <% end %>

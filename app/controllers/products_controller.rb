@@ -3,6 +3,7 @@ class ProductsController < ApplicationController
 
   def new
     @product = Product.new
+    @companies = Company.all
   end
 
   def create

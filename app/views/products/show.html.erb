@@ -10,7 +10,7 @@
       
     </h3>
     <% if @product.company %>
-      <p><%= @product.company.name %></p>
+      <p><%= link_to @product.company.name, company_path(@product.company_id) %></p>
     <% end %>
     <p><%= @product.description %></p>
   </div>
