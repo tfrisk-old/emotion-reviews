@@ -12,7 +12,7 @@
   <div class="page-header">
     <div class="row">
       <div class="col-md-6">
-        <h1>Emotion Reviews</h1>
+        <h1><%= link_to "Emotion Reviews" ,root_path %></h1>
         <p>Real product reviews based on real human emotions.</p>
       </div>
       <div class="col-md-2"></div>
@@ -29,6 +29,12 @@
           <%= link_to "Sign up", new_user_registration_path %> |
           <%= link_to "Login", new_user_session_path %>
         <% end %>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+        <%= link_to "Products", products_path %>
+        <%= link_to "Companies", companies_path %>
       </div>
     </div>
   </div>
