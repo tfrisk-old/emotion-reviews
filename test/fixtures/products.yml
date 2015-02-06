@@ -1,9 +1,16 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  description: MyText
+iphone:
+  name: "iPhone"
+  description: "Smart Phone"
+  company_id: 1
 
-two:
-  name: MyString
-  description: MyText
+imac:
+  name: "iMac"
+  description: "Computer"
+  company_id: 1
+
+lumia:
+  name: "Lumia Phone"
+  description: "Smart Phone"
+  company_id: 2
